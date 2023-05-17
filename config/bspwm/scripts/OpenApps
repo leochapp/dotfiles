@@ -44,5 +44,5 @@ case "$1" in
   --soundcontrol)
     pavucontrol & disown;;
   *)
-    echo "Opción no válida";;
+    echo "Option non validée";;
 esac

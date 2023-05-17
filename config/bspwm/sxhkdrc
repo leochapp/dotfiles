@@ -16,7 +16,7 @@ super + alt + Return
 	OpenApps --floating
 
 # Menu aplicaciones
-super + @space
+super + d
 	OpenApps --menu
 
 # Theme Selector
@@ -28,17 +28,24 @@ super + alt + o
 	tdrop -a -w 70% -h 35% -y 0 -x 15%  --class scratch alacritty --class=scratch
 
 # Power off, Reboot, Log out, Lockscreen, kill an app
-ctrl + super + alt + {p,r,q,l,k}
-	{systemctl poweroff, systemctl reboot,bspc quit,physlock -d,xkill}
+ctrl + super + alt + {p,r,q}
+	{systemctl poweroff, systemctl reboot,bspc quit}
+
+# Quit the current app
+super + q
+	xkill
+
+# Lock screen
+super + l
+	physlock -d
 
 # Apps
-shift + alt + {b,g,n,p,r,t,w,m,v,k}
+shift + alt + {b,g,t,p,r,w,m,v,k}
 	{firefox, \
 	 geany, \
 	 thunar, \
 	 pavucontrol, \
 	 OpenApps --ranger, \
-	 telegram-desktop, \
 	 whatsapp-nativefier --disable-gpu, \
 	 env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify --disable-gpu --no-zygote %U, \
 	 OpenApps --nvim, \
@@ -77,7 +84,7 @@ super + alt + w
 #
 
 # Reload BSPWM
-super + alt + r
+super + r
 	bspc wm -r
 
 # close and kill
